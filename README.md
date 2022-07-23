@@ -196,14 +196,17 @@ s.recv(1024)
 s.close()
  ```
   Ahora ejecutamos, notamos que esta descontinuado
+  
+   ```
+ python exploit.minishare3.py 
+```
+  
  ### Screenshot
   ![image](https://user-images.githubusercontent.com/104048850/180596407-ef2004a2-4693-4ca4-a183-92a8f8c675c9.png)
  
  Ahora modificamos quitando el \x00\xd, notamos que ahora si sigue la secuencia exploit.minishare3.py 
 
- ```
- python exploit.minishare3.py 
-```
+
 
  ```
  !/usr/bin/python3.8

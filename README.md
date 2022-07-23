@@ -4,4 +4,5 @@ Se procedera a realizar un desdoblamiento de buffer con el software MINISHARE 1.
 ***
 $ cd ../path/to/the/file
 ***
-```  cd ../path/to/the/file
+```  
+cd ../path/to/the/file

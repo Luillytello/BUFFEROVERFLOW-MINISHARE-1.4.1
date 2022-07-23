@@ -435,7 +435,7 @@ Finalmente tenemos nuestra SHELL REVERSE
  ### Screenshot
  ![image](https://user-images.githubusercontent.com/104048850/180597998-de279505-d9ca-42c5-9a4f-0f31e3582cea.png)
 
-Nota: Cuenado se ejecute el ecploit y el listener el programa vulnerable debe seguir ejecutandose, si se detubiera hay un error en el proceso, se debe corregir
+Nota: Cuenado se ejecute el exploit y el listener el programa vulnerable debe seguir ejecutandose, si se detubiera hay un error en el proceso, se debe corregir
 
 
 

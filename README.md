@@ -63,9 +63,7 @@ python prueba.py
 Ahora que sabemos que el tamaño máximo de la pila es 1800, podemos modificar nuestro script para enviarlos en un solo paquete y procedemos a ejecutar 
 ```
  mousepad prueba2.py 
- 
 ```
-### Screenshot
 
 ```
  !/usr/bin/python3.8

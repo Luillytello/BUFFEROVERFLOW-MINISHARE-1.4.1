@@ -198,7 +198,7 @@ s.close()
   Ahora ejecutamos, notamos que esta descontinuado
   
    ```
- python exploit.minishare3.py 
+ python exploit.minishare2.py 
 ```
   
  ### Screenshot

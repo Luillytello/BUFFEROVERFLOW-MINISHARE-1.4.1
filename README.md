@@ -3,7 +3,7 @@
 Se procedera a realizar un desdoblamiento de buffer con el software MINISHARE 1.4.1 habrimos una ventana emergente al lado de nuestro tilix para poder trabajar, usamos el siguiente comando, colacando la IP de la maquina vulnerable.
 ***
 ``` 
-rdesktop 192.168.72.135 -u user -p paswword
+rdesktop 192.168.72.135 -u Rberrospi -p lab
 ```
 ****
 ### Screenshot

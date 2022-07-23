@@ -231,7 +231,7 @@ s.close()
  ejecutamos 
  
  ```
-  python exploit.minishare2.py 
+  python exploit.minishare3.py 
   ```
   ### Screenshot
 ![image](https://user-images.githubusercontent.com/104048850/180596734-c65ece10-3015-460a-8065-a953b4cdac42.png)
